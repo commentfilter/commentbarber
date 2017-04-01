@@ -1,4 +1,4 @@
-# Comment Barber
+# Comment Barber <img align="left" src="https://raw.githubusercontent.com/commentfilter/commentbarber/master/images/barbershop.png">
 **This add-on makes it easier to focus on the topics you care about in comment threads.**
 
 There are two main features:
