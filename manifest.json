@@ -1,5 +1,5 @@
 {
-  "description": "This add-on injects JavaScript into web pages to filter comments.",
+  "description": "This add-on makes it easier to focus on the topics you care about in comment threads.",
   "manifest_version": 2,
   "name": "Comment Barber",
   "version": "1.0",
