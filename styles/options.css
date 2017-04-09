@@ -60,14 +60,10 @@ button {
   border-radius: 5px;
   text-align: center;
   text-decoration: none;
-  float: left;
+  display: inline-block;
   font-size: 12px;
   margin: 4px 2px;
   cursor: pointer;
-}
-#reset {
-  background-color: #888;
-  float: right;
 }
 .boxsize {
   box-sizing: border-box;
@@ -87,14 +83,22 @@ button {
   background-color: black;
   color: white;
 }
+#reset {
+  background-color: #888;
+}
 .domains {
   width: 50%;
   height: 100%;
   border-right: 1px solid #ddd;
   overflow-y: scroll;
 }
+.domains > div {
+  padding: 15px;
+  font-size: 10px;
+}
 .selectable {
-  list-style-type: none;
+  width: 100%;
+  display: inline-block;
 }
 .selectable li {
   margin: 8px;
