@@ -4,18 +4,18 @@
     border: none;
 }
 .barber_star_unfilled {
-    background: url('chrome-extension://onlmelapnbjejadhflpkifgannjginkd/images/star.png') no-repeat;
+    background: url('chrome-extension://__MSG_@@extension_id__/images/star.png') no-repeat;
     float: left;
 }
 .barber_star_filled {
-    background: url('chrome-extension://onlmelapnbjejadhflpkifgannjginkd/images/star-filled.png') no-repeat;
+    background: url('chrome-extension://__MSG_@@extension_id__/images/star-filled.png') no-repeat;
     float: left;
 }
 .barber_mute_expand {
-    background: url('chrome-extension://onlmelapnbjejadhflpkifgannjginkd/images/plus.png') no-repeat;
+    background: url('chrome-extension://__MSG_@@extension_id__/images/plus.png') no-repeat;
     float: right;
 }
 .barber_mute_collapse {
-    background: url('chrome-extension://onlmelapnbjejadhflpkifgannjginkd/images/mute.png') no-repeat;
+    background: url('chrome-extension://__MSG_@@extension_id__/images/mute.png') no-repeat;
     float: right;
 }

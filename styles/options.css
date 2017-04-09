@@ -1,0 +1,127 @@
+.wrapper {
+  margin: 5px auto;
+  width: 100%;
+  font-family: sans-serif;
+  color: #555;
+  font-size: 14px;
+}
+ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin-left: 0;
+  height: 23px;
+}
+.tabs li {
+  float: left;
+  width: 50%;
+}
+.tabs a {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #888;
+  padding: 10px 0;
+  border: 2px solid #fff;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-color: #888;
+}
+.tabs a:not(.active):hover {
+  background: #eee;
+}
+.tabs a.active {
+  border: 2px solid #888;
+  border-bottom-color: transparent;
+}
+.tabgroup {
+  border: 2px solid #888;
+  border-top-color: transparent;
+  padding: 2px;
+}
+.options {
+  height: 250px;
+}
+.buttons {
+  margin: auto;
+  text-align: center;
+}
+button {
+  color: #fff;
+  background-color: #337ab7;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  text-align: center;
+  text-decoration: none;
+  float: left;
+  font-size: 12px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+#reset {
+  background-color: #888;
+  float: right;
+}
+.boxsize {
+  box-sizing: border-box;
+  float: left;
+}
+.textbox {
+  width: 50%;
+  height: 100%;
+  padding: 2px;
+}
+.textbox textarea {
+  width: 100%;
+  height: 100%;
+  resize: none;
+}
+#blacklist {
+  background-color: black;
+  color: white;
+}
+.domains {
+  width: 50%;
+  height: 100%;
+  border-right: 1px solid #ddd;
+  overflow-y: scroll;
+}
+.selectable {
+  list-style-type: none;
+}
+.selectable li {
+  margin: 8px;
+  padding: 0.4em;
+  height: 14px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  text-align: center;
+}
+.selectable .edit {
+  width: 100%;
+  display: none;
+  font-family: monospace;
+}
+.selected {
+  background: #ddd !important;
+}
+.selectors {
+  float: none;
+  overflow: hidden;
+}
+.selectors label {
+  float: left;
+}
+.selectors input {
+  width: 100%;
+  box-sizing: border-box;
+  font-family: monospace;
+}
+.selectors fieldset {
+  border: none;
+}
+.selectors form div {
+  padding: 3px;
+}

@@ -8,40 +8,24 @@
     "48": "images/barbershop.png"
   },
   "web_accessible_resources": [
-    "images/*.png"
+    "images/mute.png",
+    "images/plus.png",
+    "images/star.png",
+    "images/star-filled.png"
   ],
   "permissions": [
     "storage"
   ],
-  "content_scripts": [
-    {
-      "matches": ["*://news.ycombinator.com/*"],
-      "js": [
-        "scripts/selectors/news.ycombinator.com.js"
-      ]
-    },
-    {
-      "matches": ["*://*.schneier.com/*"],
-      "js": [
-        "scripts/selectors/schneier.com.js"
-      ]
-    },
-    {
-      "matches": ["*://*.slashdot.org/*"],
-      "js": [
-        "scripts/selectors/slashdot.org.js"
-      ]
-    },
-    {
-      "matches": ["*://*/*"],
-      "css": ["styles/barber.css"],
-      "js": [
-        "scripts/thirdparty/jquery.slim.min.js",
-        "scripts/storage.js",
-        "scripts/barber.js"
-      ]
-    }
-  ],
+  "content_scripts": [{
+    "matches": ["*://*/*"],
+    "css": ["styles/barber.css"],
+    "js": [
+      "scripts/thirdparty/jquery.slim.min.js",
+      "scripts/selectors.js",
+      "scripts/storage.js",
+      "scripts/barber.js"
+    ]
+  }],
   "options_ui": {
       "page": "options.html"
   }

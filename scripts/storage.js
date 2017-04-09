@@ -18,6 +18,13 @@ window.commentBarber.storage = {
       }
       callback(data)
     })
+  },
+  update: function(key, subkey, value) {
+    window.commentBarber.storage.load(key, function(data) {
+      data = data || {}
+      data[subkey] = value
+      window.commentBarber.storage.save(key, data)
+    })
   }
 }
 /**
@@ -66,12 +73,20 @@ var browserStorageAPI = {
  * assign the best supported storage API
  */
 var storageAPI = null
-if (typeof window.chrome !== 'undefined') {
+if (window.chrome && window.chrome.storage) {
   storageAPI = chromeStorageAPI
-} else if (typeof window.localStorage !== 'undefined') {
+} else if (window.localStorage !== 'undefined') {
   storageAPI = localStorageAPI
-} else if (typeof window.browser !== 'undefined') {
+} else if (window.browser && window.browser.storage) {
   storageAPI = browserStorageAPI
 } else {
-  storageAPI = { save: function() {}, load: function(v, cb) { typeof cb === 'function' ? cb(v) : 0 } }
+  var store = {}
+  storageAPI = {
+    save: function(key, value) {
+      store[key] = value
+    },
+    load: function(key, callback) {
+      typeof cb === 'function' ? cb(store[key]) : store[key] 
+    }
+  }
 }

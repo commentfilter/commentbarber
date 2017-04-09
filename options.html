@@ -2,45 +2,63 @@
 <html>
   <head>
     <title>Comment Barber</title>
-    <style>
-      .options {
-        width: 100%;
-        height: 230px;
-        display: block;
-      }
-      .buttons {
-        text-align: center;
-      }
-      .textbox {
-        width: 50%;
-        height: 200px;
-        float: left;
-      }
-      .textbox textarea {
-        width: 95%;
-        height: 100%;
-        resize: none;
-      }
-      #blacklist {
-        background-color: black;
-        color: white;
-      }
-    </style>
+    <link rel="stylesheet" type="text/css" href="styles/options.css">
   </head>
   <body>
-    <div class="options">
-      <div class="textbox">
-        <div align="center">Whitelist</div>
-        <textarea id="whitelist"></textarea>
-      </div>
-      <div class="textbox">
-        <div align="center">Blacklist</div>
-        <textarea id="blacklist"></textarea>
+    <div class="wrapper">
+      <ul class="tabs" data-tabgroup="first-tab-group">
+        <li><a id="tab1" href="#lists" class="active">Lists</a></li>
+        <li><a id="tab2" href="#selectors">Selectors</a></li>
+      </ul>
+      <section class="tabgroup">
+        <div id="lists">
+          <div class="options">
+            <div class="textbox boxsize">
+              <textarea id="whitelist" class="boxsize"></textarea>
+            </div>
+            <div class="textbox boxsize">
+              <textarea id="blacklist" class="boxsize"></textarea>
+            </div>
+          </div>
+        </div>
+        <div id="selectors">
+          <div class="options">
+            <div class="domains boxsize">
+              <ul id='domains' class="selectable">
+              </ul>
+            </div>
+            <div class="selectors boxsize">
+              <form>
+                <fieldset>
+                  <div>
+                    <label for="container">Comment container:</label>
+                    <input name="container" type="text"/>
+                  </div>
+                  <div>
+                    <label for="attribution">Comment attribution:</label>
+                    <input name="attribution" type="text"/>
+                  </div>
+                  <div>
+                    <label for="name">Commenter name:</label>
+                    <input name="name" type="text" />
+                  </div>
+                  <div>
+                    <label for="text">Comment text:</label>
+                    <input name="text" type="text" />
+                  </div>
+                </fieldset>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="buttons">
+        <button id="save">Save</button>
+        <button id="reset">Reset Defaults</button>
       </div>
     </div>
-    <div class="buttons">
-      <button id="save">Save</button>
-    </div>
+    <script src="scripts/thirdparty/jquery.slim.min.js"></script>
+    <script src="scripts/selectors.js"></script>
     <script src="scripts/storage.js"></script>
     <script src="scripts/options.js"></script>
   </body>
