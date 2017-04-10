@@ -25,6 +25,7 @@ function mute(event) {
     $(this).removeClass('barber_mute_expand')
     comment.find(selectors.text).show()
   }
+  setIcons()
 }
 /**
  * star name
@@ -49,6 +50,7 @@ function star(event) {
   } else {
     unwhitelist(name)
   }
+  setIcons()
 }
 /**
  * store and update lists
@@ -113,6 +115,22 @@ function setInitialState() {
   })
 }
 /**
+ * cross browser icon support
+ */
+function setIcons() {
+  var map = {
+    'barber_star_unfilled': '/images/star.png',
+    'barber_star_filled': '/images/star-filled.png',
+    'barber_mute_expand': '/images/plus.png',
+    'barber_mute_collapse': '/images/mute.png',
+  }
+  for (var key in map) {
+    $('.' + key).css({
+      'background-image': 'url(' + chrome.extension.getURL(map[key]) + ')'
+    })
+  }
+}
+/**
  * initialization
  */
 function initialize() {
@@ -125,6 +143,7 @@ function initialize() {
     .addClass('barber_icon barber_star barber_star_unfilled')
     .appendTo(attributions)
   $(selectors.container).on('click', '.barber_star', {}, star)
+  setIcons()
   assignIds()
   setInitialState()
 }

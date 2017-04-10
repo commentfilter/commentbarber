@@ -18,13 +18,6 @@ window.commentBarber.storage = {
       }
       callback(data)
     })
-  },
-  update: function(key, subkey, value) {
-    window.commentBarber.storage.load(key, function(data) {
-      data = data || {}
-      data[subkey] = value
-      window.commentBarber.storage.save(key, data)
-    })
   }
 }
 /**
@@ -34,11 +27,13 @@ var chromeStorageAPI = {
   save: function (key, value) {
     var data = {}
     data[key] = value
-    chrome.storage.sync.set(data)
+    chrome.storage.sync.set(data, function() {
+      // success
+    })
   },
   load: function (key, callback) {
     chrome.storage.sync.get(key, function (value) {
-        callback(value[key])
+      callback(value ? value[key] : null)
     })
   }
 }

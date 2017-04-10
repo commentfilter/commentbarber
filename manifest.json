@@ -2,7 +2,7 @@
   "description": "This add-on makes it easier to focus on the topics you care about in comment threads.",
   "manifest_version": 2,
   "name": "Comment Barber",
-  "version": "1.0",
+  "version": "1.2",
   "homepage_url": "https://github.com/commentfilter/commentbarber",
   "icons": {
     "48": "images/barbershop.png"
@@ -27,6 +27,6 @@
     ]
   }],
   "options_ui": {
-      "page": "options.html"
+    "page": "options.html"
   }
 }

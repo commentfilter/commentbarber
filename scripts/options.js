@@ -10,7 +10,7 @@ $('.tabs').on('click', 'a', {}, function(event){
   $('.tabs a').removeClass('active')
   $($(this).attr('href')).show()
   $(this).addClass('active')
-  cb.storage.update('selections', 'tab', '#' + $(this).attr('id'))
+  cb.storage.save('tabSelection', '#' + $(this).attr('id'))
 })
 /**
  * editable list
@@ -51,7 +51,6 @@ $('.selectable').on('click', 'li', {}, function() {
       $('input[name=' + id + ']').val(selected[id])
     }
   }
-  cb.storage.update('selections', 'domain', '#' + $(this).attr('id'))
 })
 /**
  * selector fields
@@ -117,9 +116,9 @@ cb.storage.load('selectors', function(_selectors) {
 /**
  * initial state for tabs
  */
-cb.storage.load('selections', function(selections) {
-  if (selections) {
-    $(selections.tab).click()
+cb.storage.load('tabSelection', function(tabSelection) {
+  if (tabSelection) {
+    $(tabSelection).click()
   } else {
     $('.tabs a:last-of-type').click()
   }
